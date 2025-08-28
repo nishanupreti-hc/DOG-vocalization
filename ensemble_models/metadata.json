@@ -1,0 +1,14 @@
+{
+  "total_models": 700,
+  "model_types": [
+    "nb",
+    "mlp",
+    "gb",
+    "knn",
+    "rf",
+    "dt",
+    "svm"
+  ],
+  "avg_score": 0.9959999999999999,
+  "best_score": 1.0
+}
