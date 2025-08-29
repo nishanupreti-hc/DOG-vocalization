@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DogSpeak Translator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">🐕 DogSpeak</h1>
+                <nav class="nav">
+                    <button class="nav-btn active" data-tab="translate">Translate</button>
+                    <button class="nav-btn" data-tab="history">History</button>
+                    <button class="nav-btn" data-tab="insights">Insights</button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Translation Tab -->
+            <div id="translate" class="tab-content active">
+                <div class="translate-container">
+                    <div class="record-section">
+                        <div class="record-button-container">
+                            <button id="recordBtn" class="record-btn">
+                                <span class="record-icon">🎤</span>
+                                <span class="record-text">Tap to Record</span>
+                            </button>
+                        </div>
+                        <div class="upload-section">
+                            <input type="file" id="audioFile" accept="audio/*" hidden>
+                            <button id="uploadBtn" class="upload-btn">📁 Upload Audio</button>
+                        </div>
+                    </div>
+
+                    <div class="result-section" id="resultSection" style="display: none;">
+                        <div class="result-card">
+                            <div class="result-header">
+                                <h3>Translation Result</h3>
+                                <span class="confidence-badge" id="confidenceBadge">95%</span>
+                            </div>
+                            <div class="result-content">
+                                <div class="intent-result">
+                                    <span class="intent-icon" id="intentIcon">🎾</span>
+                                    <div class="intent-text">
+                                        <h4 id="intentTitle">Play Invitation</h4>
+                                        <p id="intentDescription">Your dog wants to play!</p>
+                                    </div>
+                                </div>
+                                <div class="translation-text" id="translationText">
+                                    "Hey! Let's play together! I'm excited and ready for fun!"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History Tab -->
+            <div id="history" class="tab-content">
+                <div class="history-container">
+                    <h2>Recent Translations</h2>
+                    <div class="history-list" id="historyList">
+                        <!-- History items will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insights Tab -->
+            <div id="insights" class="tab-content">
+                <div class="insights-container">
+                    <h2>Your Dog's Patterns</h2>
+                    <div class="insights-grid">
+                        <div class="insight-card">
+                            <h3>Most Common</h3>
+                            <div class="insight-value">🎾 Play Requests</div>
+                            <div class="insight-detail">42% of vocalizations</div>
+                        </div>
+                        <div class="insight-card">
+                            <h3>Peak Times</h3>
+                            <div class="insight-value">🌅 Morning</div>
+                            <div class="insight-detail">7-9 AM most active</div>
+                        </div>
+                        <div class="insight-card">
+                            <h3>Mood Trend</h3>
+                            <div class="insight-value">😊 Happy</div>
+                            <div class="insight-detail">Positive trend this week</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <p>Analyzing your dog's voice...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
